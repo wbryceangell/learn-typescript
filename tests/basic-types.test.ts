@@ -1,57 +1,63 @@
-/** @link https://www.typescriptlang.org/docs/handbook/basic-types.html */
+/**
+ * The goal is to fix any typescript errors as well as make the tests pass.
+ * Please take a look at the links provided. 
+ * @see https://www.typescriptlang.org/docs/handbook/variable-declarations.html#let-declarations
+ * @see https://www.typescriptlang.org/docs/handbook/variable-declarations.html#const-declarations
+ * @see https://www.typescriptlang.org/docs/handbook/variable-declarations.html#let-vs-const
+ * @see https://www.typescriptlang.org/docs/handbook/basic-types.html 
+ */
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#boolean */
-    let bool: boolean;
+    const bool: boolean;
+}
+
+{
+    let bool: boolean = 0;
+}
+
+{
     expect(typeof bool).toBe('boolean');
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#number */
-    let num: number;
+    const num: number;
     expect(typeof num).toBe('number');
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#string */
-    let str: string;
+    const str: string;
     expect(typeof str).toBe('string');
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#array */
-    let arr: number[];
+    const arr: number[];
     expect(Array.isArray(arr)).toBe(true);
     expect(arr.length).not.toBe(0);
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#array */
-    let arr: Array<string>;
+    const arr: Array<string>;
     expect(Array.isArray(arr)).toBe(true);
     expect(arr.length).not.toBe(0);
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#tuple */
-    let tuple: [number, string];
+    const tuple: [number, string];
     expect(Array.isArray(tuple)).toBe(true);
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#enum */
     enum Genre {
         Rock,
         HipHop,
         Rap
     }
 
-    let genre: Genre;
+    const genre: Genre;
     expect(typeof genre).toBe('number');
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#unknown */
     let something: unknown;
     expect(typeof something).toBe('boolean');
 
@@ -61,7 +67,6 @@
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#any */
     let anything: any;
     expect(typeof anything).toBe('boolean');
 
@@ -73,13 +78,10 @@
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#void */
-    /** Fix the typescript error on this one */
-    let nothing: void = true;
+    const nothing: void = true;
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#null-and-undefined */
     let bool: boolean;
     expect(typeof bool).toBe('boolean');
 
@@ -89,19 +91,11 @@
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#never */
-    /** Just read up on this one. It will be covered later with functions */
-}
-
-{
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#object */
     let obj: object;
     expect(typeof obj).toBe('object');
 }
 
 {
-    /** @link https://www.typescriptlang.org/docs/handbook/basic-types.html#type-assertions */
-    /** Fix the typescript error on this one */
     let str: unknown = 'This is a string, but we need to assert that...';
     expect(str.length).not.toBe(0);
 }
